@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  mysql:
+    container_name: mysql-web
+    platform: linux/x86_64
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: nodejs
+    ports:
+      - "3308:3306"
+    volumes:
+      - db:/var/lib/mysql
+    networks:
+      - sharing_db
+
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/node/app
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mysql
+    networks:
+      - sharing_db
+
+volumes:
+  db:
+
+networks:
+  sharing_db:

@@ -1,0 +1,46 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "nodemon dist/app.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-ejs-layouts": "^2.5.1",
+    "http-errors": "~1.6.3",
+    "mocha": "^10.2.0",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.27.0",
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.15",
+    "@types/express-ejs-layouts": "^2.5.0",
+    "@types/helmet": "^4.0.0",
+    "@types/http-errors": "^2.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.11.15",
+    "@typescript-eslint/parser": "^5.46.1",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.5.2",
+    "typescript": "^4.9.4"
+  }
+}
